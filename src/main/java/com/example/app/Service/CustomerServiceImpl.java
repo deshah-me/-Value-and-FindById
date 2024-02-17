@@ -20,6 +20,9 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public Optional<Customer> data(Request request) {
         Optional<Customer> ops= customerRepos.findById(request.getAge());
+
+        //If you want to specific columns then you can use 
+        //Customer.setAge(request.getAge);
         System.out.println(ops);
         customerRepos.save(Customer.builder().build());
         return ops;
